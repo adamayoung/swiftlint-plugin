@@ -18,6 +18,10 @@ struct SwiftLintCommandPlugin: CommandPlugin {
             swiftlintArguments.append(contentsOf: ["--config", configFile])
         }
 
+        if let reporter = argumentExtractor.extractOption(named: "reporter").first {
+            swiftlintArguments.append(contentsOf: ["--reporter", reporter])
+        }
+
         if argumentExtractor.extractFlag(named: "strict") > 0 {
             swiftlintArguments.append("--strict")
         }
