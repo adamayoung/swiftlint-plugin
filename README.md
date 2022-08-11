@@ -42,11 +42,8 @@ swift package swiftlint
 
 The command plugin also supports the following options:
 
-| Option                                   | Description                                                       |
-|------------------------------------------|-------------------------------------------------------------------|
-| `--config <path to .swiftlint.yml file>` | to specific the path to one or more SwiftLint configuration files |
-
-
-`--reporter <reporter name>` to specify the reporter used to log errors and warnings e.g. `github-actions-logging`
-
-`--strict` to upgrade warnings to serious violations
+| Option                                   | Description                                                                |
+|------------------------------------------|----------------------------------------------------------------------------|
+| `--config <path to .swiftlint.yml file>` | the path to one or more SwiftLint configuration files                      |
+| `--reporter <reporter name>`             | the reporter used to log errors and warnings e.g. `github-actions-logging` |
+| `--strict`                               | to upgrade warnings to serious violations                                  |
