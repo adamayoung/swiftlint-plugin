@@ -12,10 +12,9 @@ struct SwiftLintPlugin: BuildToolPlugin {
                 arguments: [
                     "lint",
                     "--in-process-sourcekit",
-                    "--path",
-                    target.directory.string,
                     "--config",
-                    "\(context.package.directory.string)/.swiftlint.yml"
+                    "\(context.package.directory.string)/.swiftlint.yml",
+                    target.directory.string
                 ],
                 environment: [:]
             )
