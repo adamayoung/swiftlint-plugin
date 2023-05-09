@@ -2,6 +2,12 @@
 
 A [SwiftLint](https://github.com/realm/SwiftLint) Swift Package plugin.
 
+This Plugin differs from the official [SwiftLint plugin](https://github.com/realm/SwiftLint/pulls#plug-in-support) by using a binary version of SwiftLint, so you don't have to build SwiftLint from source.
+
+## Requirements
+
+* Swift 5.7+
+
 ## Setup
 
 ### Build Tool Plugin
@@ -10,7 +16,7 @@ Add the SwiftLintPlugin dependency to your `Package.swift` file:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/adamayoung/swiftlint-plugin.git", from: "0.2.0")
+    .package(url: "https://github.com/adamayoung/swiftlint-plugin.git", from: "0.51.0")
 ]
 ```
 
@@ -21,7 +27,7 @@ targets: [
     .target(
         name: "MyTarget",
         plugins: [
-            .plugin(name: "SwiftLint", package: "SwiftLintPlugin")
+            .plugin(name: "SwiftLintPlugin", package: "swiftlint-plugin")
         ]
     ),
 ...
