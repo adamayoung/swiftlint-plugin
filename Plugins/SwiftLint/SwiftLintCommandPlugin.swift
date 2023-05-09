@@ -8,8 +8,7 @@ struct SwiftLintCommandPlugin: CommandPlugin {
         let swiftlintTool = try context.tool(named: "swiftlint")
         let swiftlintExecutableURL = URL(fileURLWithPath: swiftlintTool.path.string)
         var swiftlintArguments = [
-            "lint",
-            "--in-process-sourcekit"
+            "lint"
         ]
 
         var argumentExtractor = ArgumentExtractor(arguments)
@@ -25,6 +24,8 @@ struct SwiftLintCommandPlugin: CommandPlugin {
         if argumentExtractor.extractFlag(named: "strict") > 0 {
             swiftlintArguments.append("--strict")
         }
+
+        swiftlintArguments.append("--no-cache")
 
         let process = try Process.run(swiftlintExecutableURL, arguments: swiftlintArguments)
         process.waitUntilExit()
