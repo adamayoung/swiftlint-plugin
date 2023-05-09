@@ -8,8 +8,7 @@ struct SwiftLintCommandPlugin: CommandPlugin {
         let swiftlintTool = try context.tool(named: "swiftlint")
         let swiftlintExecutableURL = URL(fileURLWithPath: swiftlintTool.path.string)
         var swiftlintArguments = [
-            "lint",
-            "--in-process-sourcekit"
+            "lint"
         ]
 
         var argumentExtractor = ArgumentExtractor(arguments)
