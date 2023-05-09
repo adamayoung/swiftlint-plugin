@@ -1,4 +1,4 @@
-// swift-tools-version: 5.6
+// swift-tools-version: 5.7
 
 import PackageDescription
 
@@ -6,19 +6,19 @@ let package = Package(
     name: "SwiftLintPlugin",
 
     products: [
-        .plugin(name: "SwiftLint", targets: ["SwiftLint"]),
-        .plugin(name: "SwiftLintCommand", targets: ["SwiftLintCommand"])
+        .plugin(name: "SwiftLintPlugin", targets: ["SwiftLintPlugin"]),
+        .plugin(name: "SwiftLint", targets: ["SwiftLint"])
     ],
 
     targets: [
         .plugin(
-            name: "SwiftLint",
+            name: "SwiftLintPlugin",
             capability: .buildTool(),
             dependencies: ["SwiftLintBinary"]
         ),
 
         .plugin(
-            name: "SwiftLintCommand",
+            name: "SwiftLint",
             capability: .command(
                 intent: .custom(
                     verb: "swiftlint",
@@ -30,8 +30,8 @@ let package = Package(
 
         .binaryTarget(
             name: "SwiftLintBinary",
-            url: "https://github.com/realm/SwiftLint/releases/download/0.48.0/SwiftLintBinary-macos.artifactbundle.zip",
-            checksum: "9c255e797260054296f9e4e4cd7e1339a15093d75f7c4227b9568d63edddba50"
+            url: "https://github.com/realm/SwiftLint/releases/download/0.51.0/SwiftLintBinary-macos.artifactbundle.zip",
+            checksum: "9fbfdf1c2a248469cfbe17a158c5fbf96ac1b606fbcfef4b800993e7accf43ae"
         )
     ]
 )
