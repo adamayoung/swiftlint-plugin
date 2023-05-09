@@ -25,9 +25,9 @@ struct SwiftLintCommandPlugin: CommandPlugin {
             swiftlintArguments.append("--strict")
         }
 
-        if argumentExtractor.extractFlag(named: "no-cache") > 0 {
+//        if argumentExtractor.extractFlag(named: "no-cache") > 0 {
             swiftlintArguments.append("--no-cache")
-        }
+//        }
 
         let process = try Process.run(swiftlintExecutableURL, arguments: swiftlintArguments)
         process.waitUntilExit()
